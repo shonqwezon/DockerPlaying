@@ -1,0 +1,15 @@
+services:
+  server:
+    container_name: pong
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    command: ["-p", "${PORT}"]
+
+  client:
+    container_name: ping
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    command: ["${HOST}:${PORT}", "-t"]
+    depends_on: [ server ]
