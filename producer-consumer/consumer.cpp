@@ -39,15 +39,11 @@ int main(int argc, char *argv[]) {
 
                 channel.consume(name)
                         .onReceived([&channel, &handle_sleep_sec](const AMQP::Message &message, uint64_t deliveryTag, bool redelivered) {
-                            char msg[message.bodySize() + 1];
-                            strcpy(msg, message.body());
-                            msg[message.bodySize()] = '\0';
-
-                            std::cout << std::put_time(get_current_time(), "[%H:%M:%S] Received task\t:: ") << msg << std::endl;
+                            std::cout << std::put_time(get_current_time(), "[%H:%M:%S] Received task\t:: ") << message.body() << std::endl;
 
                             std::this_thread::sleep_for(std::chrono::seconds(handle_sleep_sec));
 
-                            std::cout << std::put_time(get_current_time(), "[%H:%M:%S] Processed task\t:: ") << msg << std::endl;
+                            std::cout << std::put_time(get_current_time(), "[%H:%M:%S] Processed task\t:: ") << message.body() << std::endl;
 
                             channel.ack(deliveryTag);
                         });

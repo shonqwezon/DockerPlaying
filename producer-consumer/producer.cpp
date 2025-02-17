@@ -15,7 +15,7 @@ std::string get_message_body(int code) {
     std::ostringstream oss;
     oss << std::put_time(std::localtime(&now_time_t), "sent time: %H:%M:%S") << " - code: " << randomNumber;
 
-    return oss.str();
+    return oss.str() + '\0';
 }
 
 int main(int argc, char *argv[]) {
