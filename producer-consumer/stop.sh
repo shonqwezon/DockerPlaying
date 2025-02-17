@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 echo "Stopping consumers..."
 docker ps -a --filter "name=^consumer_" --format "{{.ID}}" | xargs -r docker rm -f
