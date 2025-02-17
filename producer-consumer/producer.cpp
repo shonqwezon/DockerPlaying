@@ -50,7 +50,6 @@ int main(int argc, char *argv[]) {
                 std::cout << "Declared queue \"" << name << "\"" << std::endl;
                 for (int i = 1; i <= num_messages; ++i) {
                     std::string message = get_message_body(code);
-                    std::cout << message.size() << "\n";
                     channel.publish("", name, message);
                     std::cout << "Assigned task " << i << " :: " << message << std::endl;
                     std::this_thread::sleep_for(std::chrono::seconds(sleep_sec));
