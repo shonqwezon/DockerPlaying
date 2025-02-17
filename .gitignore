@@ -32,7 +32,8 @@
 *.out
 *.app
 
-!/cmake-build-debug/
+/cmake-build-debug/
 
-!/.gitignore
-!/CMakeLists.txt
+/.gitignore
+/CMakeLists.txt
+/.idea

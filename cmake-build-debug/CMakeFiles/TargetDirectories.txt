@@ -1,3 +1,0 @@
-/home/leo/CLionProjects/docker_playing/cmake-build-debug/CMakeFiles/docker_playing.dir
-/home/leo/CLionProjects/docker_playing/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/leo/CLionProjects/docker_playing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
