@@ -19,7 +19,10 @@ COPY . .
 
 RUN mkdir build && cd build && cmake .. && make
 
-FROM scratch
+FROM ubuntu:24.04
+RUN apt-get update && apt-get install -y \
+    libev4 \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
